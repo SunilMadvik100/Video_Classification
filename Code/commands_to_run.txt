@@ -1,0 +1,13 @@
+pip3 install "scikit-learn==1.0"
+pip3 install tensorflow==2.8
+sudo apt-get  install --allow-change-held-packages libcudnn8=8.1.0.77-1+cuda11.2
+
+For training...
+
+
+pip3 install protobuf==3.20.*
+python3 train.py --dataset Sports-Type-Classifier/data --model model/activity.model --label-bin model/lb.pickle --epochs 50
+
+For inference..
+
+python3 inference_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/tennis.mp4 --output output/tennis_1frame.avi --size 1
